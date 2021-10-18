@@ -7,8 +7,12 @@ import static org.junit.Assert.*;
 public class TestCalculator {
 
 	@Test
-	void shouldReturnZeroOnEmptyString() {
+	public void shouldReturnZeroOnEmptyString() {
 		assertEquals(0, StringCalculator.Add(""));
-		
+	}
+	
+	@Test
+	public void shouldReturnNumberONnumber() {
+		assertEquals(1, StringCalculator.Add("1"));
 	}
 }
