@@ -7,11 +7,13 @@ public class StringCalculator {
 			return 0;	
 		}else if (numbers.contains(",")) {
 			String [] token = numbers.split(",");
-			return Integer.parseInt(token[0]) + Integer.parseInt(token[1]);
+			return toInt(token[0]) + toInt(token[1]);
 		}
 		else {
-			return Integer.parseInt(numbers);
+			return toInt(numbers);
 		}
-		
+	}
+	private static int  toInt(String numbers) {
+		return Integer.parseInt(numbers);
 	}
 }
