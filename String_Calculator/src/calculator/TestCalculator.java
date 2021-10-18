@@ -6,5 +6,9 @@ import static org.junit.Assert.*;
 
 public class TestCalculator {
 
-
+	@Test
+	void shouldReturnZeroOnEmptyString() {
+		assertEquals(0, StringCalculator.Add(""));
+		
+	}
 }
