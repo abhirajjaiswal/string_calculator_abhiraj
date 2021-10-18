@@ -30,6 +30,10 @@ public class TestCalculator {
 		assertEquals(6, StringCalculator.Add("1,2\n3"));
 	}
 	
-
+	@Test
+	public void shouldAcceptCustomDelimeterSyntax() {
+		assertEquals(3, StringCalculator.Add("//;\n1,2"));
+	}
+	
 	
 }
