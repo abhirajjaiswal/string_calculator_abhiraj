@@ -19,4 +19,13 @@ public class TestCalculator {
 	public void shouldReturnSumONTwoNumbersDelimitedByComma() {
 		assertEquals(3, StringCalculator.Add("1,2"));
 	}
+	
+	@Test
+	public void shouldReturnSumOnMultipleNumbers() {
+		assertEquals(6, StringCalculator.Add("1,2,3"));
+	}
+	
+	
+	
+	
 }
