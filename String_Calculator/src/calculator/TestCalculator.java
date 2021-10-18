@@ -40,4 +40,25 @@ public class TestCalculator {
 		assertEquals(3, StringCalculator.Add("//.\n1.2"));
 	}
 	
+	@Test
+	public void shouldRaiseExceptionONNegatives() {
+		try{
+			StringCalculator.Add("-1,2,3");
+			fail("Exception.expected.");
+		}
+		catch(RuntimeException ex){
+			
+		}
+	}
+	@Test
+	public void ExceptionMessageShouldContaionNegativeNumber() {
+		try{
+			StringCalculator.Add("-1,2,3");
+			fail("Exception.expected.");
+		}
+		catch(RuntimeException ex){
+			assertEquals("Negatives not allowed -1",ex.getMessage());	
+		}
+		
+	}
 }
