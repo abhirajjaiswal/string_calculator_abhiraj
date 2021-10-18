@@ -14,7 +14,7 @@ public class StringCalculator {
 		if(numbers.isEmpty()) {
 			return 0;	
 		}else if (numbers.contains(",")) {
-			String [] token = numbers.split(",");
+			String [] token = numbers.split(",|\n");
 			
 			int sum= 0;
 			List<Integer> convert= new ArrayList<Integer>();
