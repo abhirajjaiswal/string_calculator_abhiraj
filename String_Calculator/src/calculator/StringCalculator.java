@@ -32,13 +32,18 @@ public class StringCalculator {
 	
 	
 	private static String[] tokanize(String numbers) {
-		if(numbers.startsWith("//")) {
-			return splitCustomDelimiter(numbers);
+		if(useCustomDelimeterSyntax(numbers)) {
+			return splitUsingCustomDelimiterSyntax(numbers);
 		}
 		else{
 			return splitUsingNewLinesAndComma(numbers);
 		}
 		
+	}
+
+
+	private static boolean useCustomDelimeterSyntax(String numbers) {
+		return numbers.startsWith("//");
 	}
 
 
@@ -48,12 +53,12 @@ public class StringCalculator {
 	}
 
 
-	private static String[] splitCustomDelimiter(String numbers) {
+	private static String[] splitUsingCustomDelimiterSyntax(String numbers) {
 		Matcher m= Pattern.compile("//(.)\n(.*)").matcher(numbers);
 		m.matches()	;
 		String customDelimiter = m.group(1);
 		String numberString = m.group(2);
-		return numberString.split(customDelimiter);
+		return numberString.split(Pattern.quote(customDelimiter));
 	}
 	
 	
