@@ -15,4 +15,8 @@ public class TestCalculator {
 	public void shouldReturnNumberONnumber() {
 		assertEquals(1, StringCalculator.Add("1"));
 	}
+	@Test
+	public void shouldReturnSumONTwoNumbersDelimitedByComma() {
+		assertEquals(3, StringCalculator.Add("1,2"));
+	}
 }
