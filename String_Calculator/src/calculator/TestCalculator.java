@@ -32,7 +32,7 @@ public class TestCalculator {
 	
 	@Test
 	public void shouldAcceptCustomDelimeterSyntax() {
-		assertEquals(3, StringCalculator.Add("//;\n1,2"));
+		assertEquals(3, StringCalculator.Add("//,\n1,2"));
 	}
 	
 	

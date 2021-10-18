@@ -33,15 +33,27 @@ public class StringCalculator {
 	
 	private static String[] tokanize(String numbers) {
 		if(numbers.startsWith("//")) {
-			Matcher m= Pattern.compile("//(.)\n(.*)").matcher(numbers);
-			m.matches()	;
-			String customDelimiter = m.group(1);
-			String numberString = m.group(2);
-			return numberString.split(customDelimiter);
+			return splitCustomDelimiter(numbers);
+		}
+		else{
+			return splitUsingNewLinesAndComma(numbers);
 		}
 		
+	}
+
+
+	private static String[] splitUsingNewLinesAndComma(String numbers) {
 		String [] token = numbers.split(",|\n");
 		return token;
+	}
+
+
+	private static String[] splitCustomDelimiter(String numbers) {
+		Matcher m= Pattern.compile("//(.)\n(.*)").matcher(numbers);
+		m.matches()	;
+		String customDelimiter = m.group(1);
+		String numberString = m.group(2);
+		return numberString.split(customDelimiter);
 	}
 	
 	
