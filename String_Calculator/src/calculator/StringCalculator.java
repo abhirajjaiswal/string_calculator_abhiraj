@@ -1,5 +1,13 @@
 package calculator;
 
+
+
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+
 public class StringCalculator {
 
 	public static int Add(String numbers) {
@@ -7,12 +15,23 @@ public class StringCalculator {
 			return 0;	
 		}else if (numbers.contains(",")) {
 			String [] token = numbers.split(",");
-			return toInt(token[0]) + toInt(token[1]);
+			
+			int sum= 0;
+			List<Integer> convert= new ArrayList<Integer>();
+			for (String number : token) {
+				int eachNumber = Integer.parseInt(number);
+				convert.add(eachNumber);
+			}
+			for (Integer i : convert) {
+				sum = sum+i;
+			}
+			return sum;
 		}
 		else {
 			return toInt(numbers);
 		}
 	}
+	
 	private static int  toInt(String numbers) {
 		return Integer.parseInt(numbers);
 	}
