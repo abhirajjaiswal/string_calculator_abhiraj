@@ -19,8 +19,7 @@ public class StringCalculator {
 			int sum= 0;
 			List<Integer> convert= new ArrayList<Integer>();
 			for (String number : token) {
-				int eachNumber = Integer.parseInt(number);
-				convert.add(eachNumber);
+				convert.add(toInt(number));
 			}
 			for (Integer i : convert) {
 				sum = sum+i;
