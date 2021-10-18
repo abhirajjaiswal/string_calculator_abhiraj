@@ -30,5 +30,6 @@ public class TestCalculator {
 		assertEquals(6, StringCalculator.Add("1,2\n3"));
 	}
 	
+
 	
 }

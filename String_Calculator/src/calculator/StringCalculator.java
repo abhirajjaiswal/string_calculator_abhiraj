@@ -13,8 +13,8 @@ public class StringCalculator {
 	public static int Add(String numbers) {
 		if(numbers.isEmpty()) {
 			return 0;	
-		}else if (numbers.contains(",")) {
-			String [] token = numbers.split(",|\n");
+		}else {
+			String[] token = tokanize(numbers);
 			
 			int sum= 0;
 			List<Integer> convert= new ArrayList<Integer>();
@@ -26,10 +26,14 @@ public class StringCalculator {
 			}
 			return sum;
 		}
-		else {
-			return toInt(numbers);
-		}
 	}
+	
+	
+	private static String[] tokanize(String numbers) {
+		String [] token = numbers.split(",|\n");
+		return token;
+	}
+	
 	
 	private static int  toInt(String numbers) {
 		return Integer.parseInt(numbers);
